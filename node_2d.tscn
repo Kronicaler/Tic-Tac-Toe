@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4aexmimijdwh"]
+
+[ext_resource type="Texture2D" uid="uid://dvvsfl3htwnif" path="res://Board.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://pxaf0lmi0okq" path="res://button.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://b7h2k4cli6opw" path="res://board.gd" id="2_epypp"]
+[ext_resource type="Script" uid="uid://b6yycmi6mnopc" path="res://restart_button.gd" id="4_0hol4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Board" type="Sprite2D" parent="." groups=["board"]]
+texture_filter = 1
+position = Vector2(106, 106)
+texture = ExtResource("1_wtcfe")
+script = ExtResource("2_epypp")
+
+[node name="right" type="Button" parent="Board"]
+offset_left = 42.0
+offset_top = -32.0
+offset_right = 106.0
+offset_bottom = 32.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/right"]
+centered = false
+
+[node name="center" type="Button" parent="Board"]
+offset_left = -32.0
+offset_top = -31.0
+offset_right = 32.0
+offset_bottom = 33.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/center"]
+centered = false
+
+[node name="left" type="Button" parent="Board"]
+offset_left = -106.0
+offset_top = -32.0
+offset_right = -42.0
+offset_bottom = 32.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/left"]
+centered = false
+
+[node name="btm_right" type="Button" parent="Board"]
+offset_left = 42.0
+offset_top = 42.0
+offset_right = 106.0
+offset_bottom = 106.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/btm_right"]
+centered = false
+
+[node name="btm" type="Button" parent="Board"]
+offset_left = -32.0
+offset_top = 42.0
+offset_right = 32.0
+offset_bottom = 106.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/btm"]
+centered = false
+
+[node name="btm_left" type="Button" parent="Board"]
+offset_left = -106.0
+offset_top = 42.0
+offset_right = -42.0
+offset_bottom = 106.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/btm_left"]
+centered = false
+
+[node name="top_right" type="Button" parent="Board"]
+offset_left = 42.0
+offset_top = -105.0
+offset_right = 106.0
+offset_bottom = -41.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/top_right"]
+centered = false
+
+[node name="top" type="Button" parent="Board"]
+offset_left = -32.0
+offset_top = -105.0
+offset_right = 32.0
+offset_bottom = -41.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/top"]
+centered = false
+
+[node name="top_left" type="Button" parent="Board"]
+offset_left = -106.0
+offset_top = -105.0
+offset_right = -42.0
+offset_bottom = -41.0
+script = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/top_left"]
+centered = false
+
+[node name="RestartButton" type="Button" parent="Board"]
+visible = false
+offset_left = -52.0
+offset_top = 65.0
+offset_right = 53.0
+offset_bottom = 105.0
+text = "Restart
+"
+script = ExtResource("4_0hol4")
+
+[connection signal="pressed" from="Board/right" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/center" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/left" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/btm_right" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/btm" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/btm_left" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/top_right" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/top" to="Board" method="_on_button_pressed"]
+[connection signal="pressed" from="Board/top_left" to="Board" method="_on_button_pressed"]
