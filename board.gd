@@ -1,6 +1,6 @@
 extends Sprite2D
 
-enum State {circle, cross}
+enum State {circle, cross, none}
 
 var currently_playing: State = State.circle
 signal playing_signal(player: State)
@@ -25,9 +25,12 @@ var top_right = $top_right
 var top_left = $top_left
 
 func _ready():
+	for node in get_tree().get_nodes_in_group("board_tile"):
+		node.empty_pressed.connect(_on_empty_button_pressed)
+	
 	playing_signal.emit(currently_playing)
 
-func _on_button_pressed() -> void:
+func _on_empty_button_pressed() -> void:
 	match currently_playing:
 		State.circle:
 			currently_playing = State.cross
@@ -37,6 +40,16 @@ func _on_button_pressed() -> void:
 			playing_signal.emit(currently_playing)
 	
 	var board = [[top_left,top,top_right], [left,center,right], [btm_left,btm,btm_right]]
+	
+	var is_a_tie=true
+	for i in 3:
+		for j in 3:
+			if board[i][j].state==0:
+				is_a_tie=false
+				break
+	
+	if is_a_tie:
+		game_over(State.none)
 	
 	for i in 3:
 		if board[i][0].state == 1 && board[i][1].state == 1 && board [i][2].state == 1:
@@ -57,7 +70,7 @@ func _on_button_pressed() -> void:
 	if board[0][2].state==2 && board[1][1].state==2 && board[2][0].state==2:
 		game_over(State.cross)
 
-func game_over(who_won:State):
+func game_over(who_won: State):
 	var board = [[top_left,top,top_right], [left,center,right], [btm_left,btm,btm_right]]
 	
 	for i in 3:
@@ -69,5 +82,7 @@ func game_over(who_won:State):
 			self.texture=load("res://circle  won.png")
 		State.cross:
 			self.texture=load("res://cross  won.png")
+		State.none:
+			self.texture=load("res://no one won.png")
 	
 	$"RestartButton".show()

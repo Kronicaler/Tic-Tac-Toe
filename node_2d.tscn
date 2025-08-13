@@ -13,7 +13,7 @@ position = Vector2(106, 106)
 texture = ExtResource("1_wtcfe")
 script = ExtResource("2_epypp")
 
-[node name="right" type="Button" parent="Board"]
+[node name="right" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = 42.0
 offset_top = -32.0
 offset_right = 106.0
@@ -24,7 +24,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/right"]
 centered = false
 
-[node name="center" type="Button" parent="Board"]
+[node name="center" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = -32.0
 offset_top = -31.0
 offset_right = 32.0
@@ -35,7 +35,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/center"]
 centered = false
 
-[node name="left" type="Button" parent="Board"]
+[node name="left" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = -106.0
 offset_top = -32.0
 offset_right = -42.0
@@ -46,7 +46,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/left"]
 centered = false
 
-[node name="btm_right" type="Button" parent="Board"]
+[node name="btm_right" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = 42.0
 offset_top = 42.0
 offset_right = 106.0
@@ -57,7 +57,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/btm_right"]
 centered = false
 
-[node name="btm" type="Button" parent="Board"]
+[node name="btm" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = -32.0
 offset_top = 42.0
 offset_right = 32.0
@@ -68,7 +68,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/btm"]
 centered = false
 
-[node name="btm_left" type="Button" parent="Board"]
+[node name="btm_left" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = -106.0
 offset_top = 42.0
 offset_right = -42.0
@@ -79,7 +79,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/btm_left"]
 centered = false
 
-[node name="top_right" type="Button" parent="Board"]
+[node name="top_right" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = 42.0
 offset_top = -105.0
 offset_right = 106.0
@@ -90,7 +90,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/top_right"]
 centered = false
 
-[node name="top" type="Button" parent="Board"]
+[node name="top" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = -32.0
 offset_top = -105.0
 offset_right = 32.0
@@ -101,7 +101,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Board/top"]
 centered = false
 
-[node name="top_left" type="Button" parent="Board"]
+[node name="top_left" type="Button" parent="Board" groups=["board_tile"]]
 offset_left = -106.0
 offset_top = -105.0
 offset_right = -42.0
